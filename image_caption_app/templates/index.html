@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Caption Generator</title>
+</head>
+<body style="text-align: center; font-family: sans-serif;">
+    <h1>Upload an Image to Generate Caption</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <br><br>
+        <input type="submit" value="Generate Caption">
+    </form>
+    <br>
+    {% if caption %}
+        <h2>Generated Caption:</h2>
+        <p><b>{{ caption }}</b></p>
+        <img src="{{ image_url }}" width="400">
+    {% endif %}
+</body>
+</html>
